@@ -1,0 +1,145 @@
+/*
+    header & footer CSS
+*/
+
+:root {
+    --background-color: #8977ad;
+    --basic-font-color: #000;
+    --title-font-color: #f0f0f0;
+
+    --content-background-color: #f0f0f0;
+    --content-size: 70%;
+    --content-shadow: 0px 0px 5px gray;
+    --content-radius: 20px;
+    
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR';
+
+}
+html, body{
+    background-color: var(--background-color);
+    color: var(--basic-font-color);
+
+    font-size: 100%;
+
+    position: relative;
+}
+
+.content{
+    background-color: #fff;
+    position: relative;
+    margin-top: 5vh;
+
+    width: 70%;
+    margin: 0 auto;
+}
+/* 
+div{
+    border: 1px solid #000;
+} */
+
+.header{
+    width: var(--content-size);
+    margin: 0 auto;
+    
+}
+
+.title_wrap{
+    margin: 2vh 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.header .title{
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    text-shadow: var(--content-shadow);
+}
+
+
+.menu_bar{
+    background-color: var(--content-background-color);
+    box-shadow: var(--content-shadow);
+    border-radius: var(--content-radius);
+    
+    padding: 2%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.menu_bar li{
+    list-style-type : none;
+
+    position: relative;
+}
+
+.menu_bar .main_menu ul{
+    padding: 0;
+    list-style-type : none;
+    
+    background-color: var(--content-background-color);
+    width: 7vw;
+    position: absolute;
+    left: -30%;
+    top: 180%;
+    padding: 10%;
+
+    z-index: 10;
+    /* display: none; */
+}
+
+.menu_bar a{
+    text-decoration: none;
+    color: var(--basic-font-color);
+
+    font-size: 130%;
+}
+
+.body{
+    background-color: var(--content-background-color);
+    box-shadow: var(--content-shadow);
+    border-radius: var(--content-radius);
+    margin: 0 auto;
+
+    width: var(--content-size);
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    
+    /* height: 100px; */
+    background-color: #555;
+}
+
+.footer_bar{
+    margin: 0;
+    margin-top: 1%;
+    padding: 2%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.footer_bar li{
+    list-style-type : none;
+}
+
+.footer_bar a {
+    font-size: 150%;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
