@@ -1,0 +1,79 @@
+<!-- 카테고리 별 -->
+
+<link rel="stylesheet" href="../../public/stylesheets/layout.css">
+<link rel="stylesheet" href="../../public/stylesheets/board_list.css">
+
+
+
+
+<div class="layout">
+  <%-include('../lib/sideBar.ejs') %>
+
+
+  <div class="body">
+    <h1 class="title">카테고리 별</h1>
+    <hr>
+    <br>
+
+    <div class="category">
+      <a href="/board" class="category_list">전체</a>
+      <a href="/board?category=1" class="category_list">프로젝트</a>
+      <a href="/board?category=2" class="category_list">언어 & 알고리즘</a>
+      <a href="/board?category=3" class="category_list">웹 & 앱</a>
+      <a href="/board?category=4" class="category_list">AI</a>
+      <a href="/board?category=5" class="category_list">운영체제</a>
+      <a href="/board?category=6" class="category_list">도구</a>
+    </div>
+
+    
+    <br>
+
+    <div class="list_wrap">
+      <div class="list">
+        
+        <div>
+          <p class="list_title">title</p>
+          <p class="list_content">content</p>
+          <p class="list_tag">tag</p>
+        </div>
+
+        <img src="../../public/images/basic/profile.png" alt="">
+        
+      </div>
+
+
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  <!-- <%-include('../lib/footer.ejs') %> -->
+</div>
+
+
+<script>
+  let category = new URLSearchParams(location.search).get('category');
+  category = parseInt(category);
+
+  const category_list = document.getElementsByClassName('category_list')
+  
+  for(let i=0; i<category_list.length; i++){
+    category_list[i].style.backgroundColor = '#fff';
+    category_list[i].style.color = '#000';
+  }
+
+  if(category > 0 && category < category_list.length){
+    category_list[category].style.backgroundColor = 'var(--background-color)';
+    category_list[category].style.color = '#fff';
+  } else {
+    category_list[0].style.backgroundColor = 'var(--background-color)';
+    category_list[0].style.color = '#fff';
+  }
+
+  console.log(category)
+
+</script>

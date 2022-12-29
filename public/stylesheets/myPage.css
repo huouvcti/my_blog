@@ -1,0 +1,40 @@
+.title {
+    margin: 0;
+    color: var(--background-color);
+}
+
+.myPage_menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+
+/* div {
+    border: 1px solid #000;
+} */
+
+
+
+.myPage_menu a {
+    display: block;
+    border: 1px solid gray;
+    padding: 10%;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+.myPage_menu i {
+    display: block;
+    margin: auto;
+    color: var(--background-color);
+
+    font-size: 500%;
+}
+
+.myPage_menu p {
+    font-size: 130%;
+    margin: 0;
+    margin-top: 30px;
+    color: #000;
+}

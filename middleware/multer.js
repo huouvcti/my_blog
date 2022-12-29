@@ -1,26 +1,51 @@
 const multer = require('multer');
+const fs = require("fs");
 
-const upload = (dir) =>{
-    return multer ({
-        storage: multer.diskStorage({
-            // 폴더위치
-            destination(req, file, done) {
-                done(null, `public/images/${dir}`);
-            },
-            filename: (req, file, done) => {
-                const fileName = file.originalname;
-                done(null, fileName);
-            },
-        }),
-        fileFilter: fileFilter
-    })
+const dayjs = require("dayjs");
+
+const upload = multer ({
+    storage: multer.diskStorage({
+        // 폴더위치
+        destination(req, file, done) {
+            done(null, `public/images/temp`);
+        },
+        // 파일 이름
+        filename: (req, file, done) => {
+            done(null, file.originalname);
+        },
+    }),
+})
+
+const imgRename = function(imgFile, dir, user_key) {
+    const originDir =  imgFile.destination + '/' + imgFile.originalname
+    const saveFolder = 'public/images/' + dir
+
+    let date = new dayjs();
+    let datetime = date.format('YYMMDDHHmmssms');
+
+    console.log(saveFolder)
+
+    const imgType = (imgFile.originalname).split('.')[1]
+
+    const saveDir = `${saveFolder}/${user_key}_${datetime}.${imgType}`;
+
+    // 경로 추가
+    if (!fs.existsSync(saveFolder)) fs.mkdirSync(saveFolder);
+
+
+    fs.rename(originDir, saveDir, (err) => {
+        if (err) {
+            console.log(err);
+            return false;
+        }
+    });
+
+    
+    return saveDir;
 }
 
-const imgRename = function(imgFile, key, seq) {
-    let img = {
-        type: (imgFile.originalname).split('.')[1],
-        dir: imgFile.destination
-    }
-    img.name = key + '_' + seq + '.'+img.type;
-    return img;
+
+module.exports = {
+    upload,
+    imgRename,
 }

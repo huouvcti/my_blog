@@ -16,6 +16,10 @@ const path = require('path');
  */
 
 const indexRouter = require('./routes/web');
+
+const myPageRouter = require('./routes/myPage');
+
+const loginRouter = require('./routes/api/login');
 const editorRouter = require('./routes/api/editor');
 
 app.use(express.json());
@@ -25,10 +29,6 @@ app.use(express.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('ejs', require('ejs').__express)
-
-// app.use('/views/script', express.static(__dirname +'/views/script'))
-// app.use('/views/css', express.static(__dirname +'/views/css'))
-// app.use('/views/section', express.static(__dirname +'/views/section'))
 
 app.use('/public', express.static(__dirname +'/public'));
 
@@ -50,13 +50,11 @@ app.use(logger('dev'));
 
 app.use('/', indexRouter);
 
+app.use('/myPage', myPageRouter);
+
+app.use('/api/login', loginRouter);
 app.use('/api/editor', editorRouter);
 
-
-app.use(function (req, res, next) {
-    let dir = './public/userData/images';
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
-});
 
 
 

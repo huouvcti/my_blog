@@ -1,0 +1,61 @@
+<head>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/stylesheets/login.css" />
+</head>
+
+
+<body>
+  <div class="login_wrap">
+    <h1 class="title">만두's 블로그</h1>
+    <div>
+      <hr>
+      <p>
+        <label for="input_id">아이디</label><br>
+        <input type="text" id="input_id" placeholder="">
+      </p>
+      <p>
+        <label for="input_pw">패스워드</label><br>
+        <input type="password" id="input_pw" placeholder="">
+      </p>
+      
+      <button onclick="login()">로그인</button>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  function login() {
+    const formData = {
+      id: document.getElementById('input_id').value,
+      pw: document.getElementById('input_pw').value
+    }
+
+    $.ajax({
+        type:'post',
+        data: formData,
+        dataType:'json',
+        url:`/api/login/login`,
+        success : function(responseData) {
+          console.log(responseData);
+
+          if(responseData.result){
+            location.href = '/mypage'
+          } else {
+            alert("로그인 실패")
+          }
+        },
+        error : function(error) {
+        }
+    });
+  }
+  
+
+
+  
+</script>
+
+        

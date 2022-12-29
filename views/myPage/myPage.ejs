@@ -1,0 +1,57 @@
+<head>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script src="https://kit.fontawesome.com/36cd97a9bc.js" crossorigin="anonymous"></script>
+<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../public/stylesheets/layout.css">
+<link rel="stylesheet" href="../../public/stylesheets/myPage.css">
+</head>
+
+
+
+
+<div class="layout">
+  <%-include('../lib/sideBar.ejs') %>
+
+
+  <div class="body">
+    <h1 class="title">마이페이지</h1>
+    <hr>
+    <br>
+
+    <div class="myPage_menu">
+      <a href="/mypage/profile">
+        <i class='fas fa-user'></i>
+        <p>프로필 수정</p>
+      </a>
+      <a href="/myPage/write">
+        <i class='fas fa-pen'></i>
+        <p>게시글 작성</p>
+      </a>
+      <a href="/myPage/myBoard_list">
+        <i class='fas fa-heart'></i>
+        <p>내가 쓴 게시글</p>
+      </a>
+      <a href="/myPage/myBoard_list">
+        <i class="fa-solid fa-calendar-days"></i>
+        <p>한줄 일기</p>
+      </a>
+      <a href="/api/login/logout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <p>로그아웃</p>
+      </a>
+    </div>
+    
+  </div>
+
+  <!-- <%-include('../lib/footer.ejs') %> -->
+</div>
+
+
+
+
+
+
+
+
+        

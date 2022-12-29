@@ -10,7 +10,7 @@
 </head>
 
 
-<%-include('../lib/header.ejs') %>
+<%-include('./lib/header.ejs') %>
 
 
 <div class="body">
@@ -22,30 +22,30 @@
     });
 
     $('#summernote').summernote({
+      
           
       callbacks: {
         onImageUpload: function(files, editor, welEditable) {
-          for (var i = files.length - 1; i >= 0; i--) {
-            sendFile(files[i]);
-          }
+          console.log("ddd")
+          sendFile(files[0], this);
         }
       }
     });
 
-    function sendFile(file) {
+    function sendFile(file, el) {
       var form_data = new FormData();
-      form_data.append('file', file);
+      form_data.append('img', file);
       $.ajax({
         data: form_data,
         type: "POST",
-        url: '/api/create/img',
+        url: '/api/editor/create/img',
         cache: false,
         contentType: false,
         enctype: 'multipart/form-data',
         processData: false,
         success: function(url) {
-          $(el).summernote('editor.insertImage', url);
-          $('#imageBoard > ul').append('<li><img src="'+url+'" width="480" height="auto"/></li>');
+          console.log(url)
+          $('#summernote').summernote('insertImage', url);
         }
       });
     }
@@ -55,6 +55,6 @@
 </div>
 
 
-<%-include('../lib/footer.ejs') %>
+<%-include('./lib/footer.ejs') %>
 
         

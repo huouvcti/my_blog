@@ -29,7 +29,7 @@ html, body{
 }
 
 .content{
-    background-color: #fff;
+    /* background-color: #fff; */
     position: relative;
     margin-top: 5vh;
 
@@ -106,12 +106,13 @@ div{
 }
 
 .body{
-    background-color: var(--content-background-color);
+    /* background-color: var(--content-background-color); */
     box-shadow: var(--content-shadow);
     border-radius: var(--content-radius);
     margin: 0 auto;
 
     width: var(--content-size);
+    min-height: 70%;
 }
 
 .footer{

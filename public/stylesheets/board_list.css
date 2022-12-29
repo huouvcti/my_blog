@@ -1,0 +1,43 @@
+.title {
+    margin: 0;
+    color: var(--background-color);
+}
+
+.category {
+    
+}
+.category a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: 1px solid gray;
+}
+
+.list_wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.list{
+    border: 1px solid gray;
+    height: 200px;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.list_title {
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.list img{
+    width: 100%;
+
+    height: 100%;
+    
+}
+

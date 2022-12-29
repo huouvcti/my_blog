@@ -1,0 +1,52 @@
+.title {
+    margin: 0;
+    color: var(--background-color);
+}
+
+.write label {
+    font-weight: normal;
+}
+
+.write input[type='text'] {
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 30px;
+}
+
+.write input:focus {
+    outline-color: var(--background-color);
+}
+
+.write select {
+    padding: 1%;
+    margin-left: 15px;
+}
+
+.write select:focus{
+    outline-color: var(--background-color);
+}
+
+#input_title {
+    font-size: 150%;
+}
+
+#writing_btn {
+    width: 100%;
+    background-color: var(--background-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 130%;
+    padding: 2% 1%;
+    border: none;
+}
+
+
+.select_wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.input_hidden_wrap {
+    padding: 1%;
+    margin-bottom: 30px;
+}

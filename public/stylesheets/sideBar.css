@@ -1,0 +1,51 @@
+.sideBar {
+    background-color: #fff;
+    width: 80%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile{
+
+}
+
+.profile img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: block;
+    margin: auto;
+}
+
+.profile p {
+    text-align: center;
+}
+
+.profile #nickname{
+    font-size: 150%;
+}
+
+.sideBar ul {
+    padding: 0; 
+    list-style-type : none;
+    
+}
+
+.sideBar li {
+    border: 1px solid gray;
+    padding: 5%;
+    margin-bottom: 15px;
+}
+
+.sideBar a {
+    display: block;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+}
+
+/* .board_count {
+    color: #666;
+} */
